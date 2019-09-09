@@ -1,0 +1,31 @@
+{
+  "app/components/ImageAvatar/ImageAvatar.js": {
+    "description": "Crea un avatar para mostrar una imagen.",
+    "displayName": "ImageAvatar",
+    "methods": [],
+    "props": {
+      "uri": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Url que se envia al component para cargar la imagen",
+        "defaultValue": {
+          "value": "\"\"",
+          "computed": false
+        }
+      },
+      "size": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Permite establecer el tamaño que tendra la imagen",
+        "defaultValue": {
+          "value": "80",
+          "computed": false
+        }
+      }
+    }
+  }
+}

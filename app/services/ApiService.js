@@ -1,15 +1,10 @@
-// import axios from "axios";
-// import { ddragonApiData } from "lol-stats/app/utils/Ddragon";
-// import { DDRAGONHOST } from "lol-stats/config/Constants";
-// import { getDdragon } from "../actions/DdragonActions";
-
-// const ddragonData = axios.create();
+import axios from "lol-stats/app/utils/Axios";
 
 export default {
-  getChampions() {
-    // eslint-disable-next-line prefer-template
-    // const url = DDRAGONHOST + "data/es_MX/champion.json";
-    // const res = await ddragonData(url);
-    // return res.data();
-  }
+    getChampions() {
+        return axios.get("champion.json").then(response => response);
+    },
+    getChamp(champ) {
+        return axios.get(`champion/${champ}.json`).then(response => response);
+    },
 };

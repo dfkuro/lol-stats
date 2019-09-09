@@ -1,31 +1,32 @@
-import React, { 
-	// useEffect, 
-	// useState 
-} from 'react';
-import { Text, View } from 'react-native';
-import PropTypes from 'prop-types';
-import styles from './ImageAvatarStyle';
+import React from "react";
+import { Image } from "react-native";
+import { string, func, number } from "prop-types";
+// import styles from "./ImageAvatarStyle";
 
-export default function ImageAvatar (props) {
-	return (
-		<View>
-			<Text>ImageAvatar</Text>
-		</View>
-	);
+/**
+ * Crea un avatar para mostrar una imagen.
+ */
+export default function ImageAvatar(props) {
+    const { uri, size } = props;
+    return (
+        <>
+            <Image style={{ height: size, width: size }} source={{ uri }} />
+        </>
+    );
 }
-
 
 ImageAvatar.propTypes = {
-	// data: PropTypes.array
-}
+    /**
+     * Url que se envia al component para cargar la imagen
+     */
+    uri: string,
+    /**
+     * Permite establecer el tamaño que tendra la imagen
+     */
+    size: number,
+};
 
 ImageAvatar.defaultProps = {
-	// data: []
-}
-
-
-
-
-
-
-
+    uri: "",
+    size: 80,
+};
