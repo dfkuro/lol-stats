@@ -8,7 +8,6 @@ export const RESET_CHAMPIONS = "RESET_CHAMPIONS";
 
 // Thunk: this is a special type of action that can dispatch other actions
 export function getChampions() {
-    console.log("Getting champions");
     return async dispatch => {
         // dispatch(getChampionsBegin());
         // dispatch(getChampionsSuccess({ example: "example" }));

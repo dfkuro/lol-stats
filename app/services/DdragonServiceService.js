@@ -1,3 +1,3 @@
 export default {
-  serviceName: "DdragonServiceService"
+    serviceName: "DdragonServiceService",
 };
