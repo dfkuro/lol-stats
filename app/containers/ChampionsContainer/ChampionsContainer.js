@@ -17,12 +17,12 @@ export default function ChampionsContainer({ children }) {
     useEffect(() => {
         const loadData = async () => {
             await ApiService.getChamp("Ahri").then(response => {
-                setData(response.data.data["Ahri"]);
+                setData(response.data.data.Ahri);
             });
         };
 
         loadData();
-    }, [setData]);
+    }, []);
 
     return children({ name, data }, loadName);
 }
