@@ -9,11 +9,7 @@ import {
 import ApiService from "lol-stats/app/services/ApiService";
 
 // Example initial state
-const initialState = {
-    Champions: {},
-    isLoading: false,
-    error: "",
-};
+const initialState = {};
 
 // Return a new state object with updated attributes
 export default function ChampionsReducer(state = initialState, { type, payload }) {
@@ -26,8 +22,7 @@ export default function ChampionsReducer(state = initialState, { type, payload }
         case GET_CHAMPIONS_SUCCESS:
             return {
                 ...state,
-                champions: payload.data.data,
-                isLoading: false,
+                ...payload.data,
             };
         case GET_CHAMPIONS_FAILURE:
             return {

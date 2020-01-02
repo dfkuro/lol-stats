@@ -1,17 +1,19 @@
 /* eslint-disable no-console */
 import React, { useState, useEffect } from "react";
+import R from "ramda";
 import { getChampions } from "lol-stats/app/actions/ChampionsActions";
 import { useDispatch, useSelector } from "react-redux";
 import { Text, View } from "react-native";
 import PropTypes from "prop-types";
 
 export default function ChampionsListContainer() {
-    const [champions, setChampions] = useState();
-
     const dispatch = useDispatch();
-    dispatch(getChampions());
-    setChampions(useSelector(champions => champions.data));
-    console.log(champions);
+    const champions = useSelector(state => state.Champions);
+
+    useEffect(() => {
+        dispatch(getChampions());
+    }, []);
+
     return <View>{/* {championsData && championsData.keys.map(item => <Text>{item}</Text>)} */}</View>;
 }
 
